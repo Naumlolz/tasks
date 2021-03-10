@@ -1,0 +1,18 @@
+order_items = [100.00, 112.2, 301.1]
+discounts = [10.0, 0.0, 0.0]
+
+class PriceCalculator():
+    @staticmethod
+    def calculate_sum(order_list, discount_list):
+        discount = tuple((a * (b * (1/100)) for a, b in zip(order_list, discount_list)))
+        new_value = tuple(a - b for a, b in zip(order_list, discount))
+        
+        total_sum = 0
+        
+        for value in new_value:
+            total_sum += value
+        print(total_sum)
+        
+        
+      
+PriceCalculator.calculate_sum(order_items, discounts)
